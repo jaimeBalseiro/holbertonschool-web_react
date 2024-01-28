@@ -1,18 +1,31 @@
-import React, { Fragment } from 'react';
-import logo from '../assets/Holberton_logo.jpg';
-import './Header.css';
+import React from 'react';
+import logo from '../assets/holberton-logo.jpg';
+import { StyleSheet, css } from 'aphrodite';
 
+const styles = StyleSheet.create({
+  appHeader: {
+    flexGrow: 0,
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: 'var(--holberton-red)',
+    borderBottom: '3px solid var(--holberton-red)',
+  },
+  appLogo: {
+    flexGrow: 0,
+    pointerEvents: 'none',
+    height: 200,
+    width: 'auto',
+  },
+});
 
 function Header() {
-  return(
-    <Fragment>
-      <div className="App-header">
-        <img src={logo} alt="logo" />
-        <h1>
-          School dashboard
-        </h1>
-      </div>
-    </Fragment>
+  return (
+    <header className={css(styles.appHeader)}>
+      <img src={logo} className={css(styles.appLogo)} alt="logo" />
+      <h1 style={{ flexGrow: 1 }}>School dashboard</h1>
+    </header>
   );
 }
 

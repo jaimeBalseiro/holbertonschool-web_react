@@ -1,19 +1,22 @@
-import React, { Fragment } from 'react';
-import './Login.css';
+import React from 'react';
+import { StyleSheet, css } from 'aphrodite';
 
+const styles = StyleSheet.create({});
 
 function Login() {
-  return(
-    <Fragment>
-      <div className="App-body">
-        <p>Login to access the full dashboard</p>
-        <label htmlFor="email">Email</label>
-        <input type="email" id="email" name="email"/>
-        <label htmlFor="password">Password</label>
-        <input type="password" id="password" name="password"/>
-        <button>OK</button>
-      </div>
-    </Fragment>
+  return (
+    <section key="login" id="section_login">
+      <p>Login to access the full dashboard</p>
+      <form>
+        <label htmlFor="email">Email: </label>
+        <input id="email" type="email" />
+        &nbsp; &nbsp;
+        <label htmlFor="password">Password: </label>
+        <input id="password" type="password" />
+        &nbsp; &nbsp;
+        <input type="submit" value="OK" />
+      </form>
+    </section>
   );
 }
 
